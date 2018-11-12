@@ -1,0 +1,377 @@
+/* html, body {
+    min-height: 100vh;
+    */
+
+html, body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-grid {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 20% auto 20%;
+    grid-gap: 5px;
+    grid-template-areas: "h" "m" "f";
+}
+
+/* HEADER */
+
+header {
+    grid-area: h;
+    display: flex;
+    justify-content: center;
+    background-color: #fcfced;
+}
+
+.logo {
+    height: 100px;
+    width: 150px;
+    /* display: none; */
+}
+
+/* padajuci meni */
+
+.hide {
+    display: none;
+}
+
+li {
+    margin: 0;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+li:hover {
+    background-color: rgba(0, 0, 0, 0.356);
+}
+
+li, ul {
+    margin: 0;
+    padding: 5px 0 5px 0;
+    list-style: none;
+    border-bottom: 1px solid white;
+}
+
+.menu-burger {
+    width: 100%;
+    height: 35px;
+    /* background-color: grey; */
+    position: fixed;
+}
+
+.burger {
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    padding: 2% 0 0 2%;
+    /* color: crimson; */
+}
+
+.nav {
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    background-color: #ff0070;
+    width: 100%;
+    text-align: center;
+    /* padding-left: 5%; */
+}
+
+/* MAIN */
+
+main {
+    grid-area: m;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+/* Prva pozadinska slika sa tekstom*/
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/41.jpg");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero-text {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding-top: 20%; */
+}
+
+h1 {
+    font-size: 40px;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.hero-text a input {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: white;
+    background-color: #ff0070;
+    text-align: center;
+    cursor: pointer;
+}
+
+.hero-text a input:hover {
+    background-color: rgb(236, 114, 114);
+    color: white;
+}
+
+/* PRVI TEKST */
+
+p {
+    margin: 0;
+    padding: 10px;
+    text-align: justify;
+}
+
+/* Druga pozadinska slika sa tekstom */
+
+.hero-image1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/10.jpg");
+    /* height: 300px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero-text1 {
+    /* padding: 0; */
+    padding-bottom: 5%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.glavno {
+    position: relative;
+    padding-top: 8%;
+    padding-left: 2%;
+    padding-right: 2%;
+    /* padding-bottom: 8%; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* SREDISNJI TEKSTUALNI DEO */
+
+.radimo-grid div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.radimo-grid {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.radimo {
+    grid-area: r;
+    align-items: center;
+}
+
+.sveze-voce {
+    grid-area: v;
+}
+
+.slatko {
+    grid-area: s;
+}
+
+.vino {
+    grid-area: k;
+}
+
+.radimo-grid img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Drugi tekst */
+
+.hero-text2 {
+    padding: 0;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* FOOTER */
+
+.hero-imagef {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/malinapozadina.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px 0px 10px;
+}
+
+footer {
+    grid-area: f;
+    justify-content: flex-start;
+}
+
+.ikonice {
+    width: 30px;
+    height: 30px;
+    padding-left: 5px;
+}
+
+.desno-footer {
+    display: flex;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ? */
+
+.slika {
+    max-width: 100%;
+}
+
+@media (min-width:800px) {
+    /* ZAGLAVLJE */
+    header {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .logo {
+        align-self: center;
+        display: unset;
+    }
+    .hide {
+        display: unset;
+    }
+    li a {
+        text-decoration: none;
+    }
+    li, ul {
+        border-bottom: 0;
+    }
+    li:hover {
+        background-color: rgba(238, 12, 144, 0.356);
+    }
+    .nav {
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.877);
+        width: 100%;
+        justify-content: space-around;
+        position: fixed;
+        border-bottom: none;
+        padding-left: 0;
+        /* padding: 3px; */
+        top: 0;
+    }
+    .menu-burger {
+        display: none;
+    }
+    .burger {
+        display: none;
+    }
+    /* MAIN */
+    /* Prva pozadinska slika sa tekstom  */
+    .hero-image {
+        height: 400px;
+        padding-left: 0;
+    }
+    .hero-text {
+        padding-top: 100px;
+    }
+    /* Prvi tekt */
+    .tekst1 {
+        padding-top: 2%;
+        padding-bottom: 2%;
+        padding-left: 1%;
+        /* width: 48%;
+        justify-content: space-evenly; */
+        text-align: center;
+    }
+    /* Druga pozadinska slika sa tekstom */
+    .glavno {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    /* SREDISNJI TEKSTUALNI DEO */
+    .radimo-grid {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        /* grid-gap: 5px; */
+        grid-template-areas: "r r r" "v s k";
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    .sveze-voce, .slatko, .vino {
+        padding: 3%;
+    }
+    /* FOOTER */
+    .ikonice img {
+        display: inline-block;
+        justify-content: center;
+        align-content: center;
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        /**/
+    }
+}
+
+/* ovo je sve bilo za footer */
+
+.column {
+    text-align: center;
+    /**/
+    margin: auto;
+    /**/
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* .hero-text-home {
+        padding-top: 5%;
+    } */
