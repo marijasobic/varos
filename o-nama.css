@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    background-attachment: fixed;
 }
 
 .hero-text {
@@ -28,6 +29,17 @@
 
 h2 {
     font-size: 30px;
+}
+
+p {
+    margin: 0;
+    /* padding: 2%; */
+    text-align: justify;
+}
+
+.tekst {
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .slika {
