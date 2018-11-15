@@ -1,6 +1,6 @@
-/* html, body {
-    min-height: 100vh;
-    */
+* {
+    box-sizing: border-box;
+}
 
 html, body {
     margin: 0;
@@ -8,11 +8,10 @@ html, body {
 }
 
 .container-grid {
-    width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 20% auto 20%;
+    grid-template-rows: auto;
     grid-gap: 5px;
     grid-template-areas: "h" "m" "f";
 }
@@ -23,12 +22,11 @@ header {
     grid-area: h;
     display: flex;
     justify-content: center;
-    background-color: #fcfced;
 }
 
 .logo {
-    height: 100px;
-    width: 150px;
+    height: 110px;
+    width: 170px;
     /* display: none; */
 }
 
@@ -44,7 +42,7 @@ li {
 
 li a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
@@ -62,24 +60,27 @@ li, ul {
 .menu-burger {
     width: 100%;
     height: 35px;
-    /* background-color: grey; */
     position: fixed;
+    z-index: 1;
 }
 
 .burger {
     width: 40px;
-    height: 30px;
+    height: 40px;
     cursor: pointer;
     padding: 2% 0 0 2%;
     /* color: crimson; */
 }
 
 .nav {
-    position: absolute;
+    position: fixed;
     z-index: 1;
-    top: 35px;
+    /* top: 50px; */
+    top: 40px;
+    left: 2%;
     background-color: #ff0070;
-    width: 100%;
+    /* width: 100%; */
+    width: 50%;
     text-align: center;
     /* padding-left: 5%; */
 }
@@ -99,7 +100,7 @@ main {
 /* Prva pozadinska slika sa tekstom*/
 
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/41.jpg");
+    background-image: linear-gradient(rgba(63, 179, 247, 0.43), rgba(67, 243, 55, 0.38)), url("./img/41.jpg");
     height: 300px;
     background-position: center;
     background-repeat: no-repeat;
@@ -113,7 +114,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding-top: 20%; */
 }
 
 h1 {
@@ -146,35 +146,85 @@ p {
     text-align: justify;
 }
 
+/* GALERIJA POCETAK */
+
+.galerija {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+    grid-gap: 2px;
+    grid-auto-flow: dense;
+    /* popunjava prazan prostor */
+}
+
+.galerija img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%);
+    transition: 0.6s;
+}
+
+.velika {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.horizontalna {
+    grid-column: span 2;
+}
+
+.vertikalna {
+    grid-row: span 4;
+}
+
+/* .galerija img {
+    filter: grayscale(80%);
+    transition: 0.6s;
+} */
+
+.galerija img:hover {
+    filter: grayscale(0%);
+}
+
+/* GALERIJA KRAJ */
+
 /* Druga pozadinska slika sa tekstom */
 
 .hero-image1 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/10.jpg");
+    background-image: url("./img/10.jpg");
+    /* linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), */
     /* height: 300px; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    /* position: relative; */
     background-attachment: fixed;
 }
 
 .hero-text1 {
-    /* padding: 0; */
-    padding-bottom: 5%;
     color: white;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    padding-top: 5%;
+    margin-right: 2%;
+    padding-bottom: 5%;
     margin-left: auto;
 }
 
-.glavno {
+/* .hero-text1 p{
+    text-align: end;
+} */
+
+/* .glavno {
     position: relative;
     padding-top: 8%;
     padding-left: 2%;
     padding-right: 2%;
-    /* padding-bottom: 8%; */
+    padding-bottom: 8%;
     font-family: 'Open Sans', sans-serif;
-}
+} */
 
 /* SREDISNJI TEKSTUALNI DEO */
 
@@ -185,7 +235,6 @@ p {
 }
 
 .radimo-grid {
-    width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -209,14 +258,14 @@ p {
 }
 
 .radimo-grid img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 
 /* Drugi tekst */
 
 .hero-text2 {
-    padding: 0;
+    padding: 2%;
     color: black;
     display: flex;
     flex-direction: column;
@@ -226,7 +275,8 @@ p {
 /* FOOTER */
 
 .hero-imagef {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/malinapozadina.jpg");
+    background-image: url("./img/malinapozadina.jpg");
+    /* linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -264,15 +314,50 @@ footer {
     max-width: 100%;
 }
 
+.box1 {
+    /* height: 300px; */
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+
+.box2 {
+    /* height: 300px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.detalj {
+    width: 20px;
+    /* height: 300px; */
+    background-color: #ff0070;
+    left: 0;
+}
+
+.opis {
+    padding-bottom: 2%;
+}
+
+.detalj-h {
+    width: 200px;
+    height: 2px;
+    background-color: #ff0070;
+}
+
+/* --------------------------------------------------------------------------------------------------------- */
+
 @media (min-width:800px) {
     /* ZAGLAVLJE */
     header {
         flex-direction: column;
-        justify-content: center;
     }
     .logo {
         align-self: center;
-        display: unset;
+        margin-top: 50px;
+        width: 300px;
+        height: auto;
     }
     .hide {
         display: unset;
@@ -288,14 +373,13 @@ footer {
     }
     .nav {
         display: flex;
-        background-color: rgba(255, 255, 255, 0.877);
         width: 100%;
+        height: 40px;
         justify-content: space-around;
         position: fixed;
         border-bottom: none;
-        padding-left: 0;
-        /* padding: 3px; */
         top: 0;
+        left: 0;
     }
     .menu-burger {
         display: none;
@@ -312,7 +396,9 @@ footer {
     .hero-text {
         padding-top: 100px;
     }
-    /* Prvi tekt */
+    /* .tekst1 {
+       
+    } */
     .tekst1 {
         padding-top: 2%;
         padding-bottom: 2%;
@@ -322,14 +408,8 @@ footer {
         text-align: center;
     }
     /* Druga pozadinska slika sa tekstom */
-    .glavno {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
     /* SREDISNJI TEKSTUALNI DEO */
     .radimo-grid {
-        width: 100vw;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto auto;
@@ -351,27 +431,11 @@ footer {
         margin: auto;
         /**/
     }
+    .detalj-h {
+        width: 300px;
+    }
+    .opis {
+        padding-top: 25px;
+        padding-left: 25px;
+    }
 }
-
-/* ovo je sve bilo za footer */
-
-.column {
-    text-align: center;
-    /**/
-    margin: auto;
-    /**/
-    width: 50%;
-    padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* .hero-text-home {
-        padding-top: 5%;
-    } */
